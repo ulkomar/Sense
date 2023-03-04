@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Firebase
+
 import GoogleSignIn
 
 class LoginViewController: UIViewController {
@@ -18,9 +19,17 @@ class LoginViewController: UIViewController {
         return button
     }()
 
+    private lazy var textLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Hello"
+        label.textColor = .black
+        return label
+    }()
+
     private lazy var fieldsStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
-                                    [nameField,
+                                    [textLabel,
+                                        nameField,
                                      loginField,
                                      passwordField,
                                      buttonsStack])
@@ -55,7 +64,7 @@ class LoginViewController: UIViewController {
 
     private lazy var buttonsStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [loginButton, registrationButton, googleSignInButton])
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.spacing = 20
         stack.distribution = .fillEqually
         return stack
@@ -102,6 +111,29 @@ class LoginViewController: UIViewController {
     }
 
     @objc private func signInWithGoogle(_ action: UIButton) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+
+        GIDSignIn.sharedInstance.configuration = config
+
+        // Start the sign in flow!
+
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
+            if error != nil { return }
+
+            guard let IDToken = result?.user.idToken,
+                  let accessToken = result?.user.accessToken else { return }
+
+            let credential = GoogleAuthProvider.credential(
+                withIDToken: IDToken.tokenString,
+                accessToken: accessToken.tokenString)
+
+            Auth.auth().signIn(with: credential) { [weak self] result, error in
+                if error != nil { return }
+                self?.textLabel.text = result?.user.displayName
+            }
+        }
     }
 }
