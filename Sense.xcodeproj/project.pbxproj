@@ -11,7 +11,6 @@
 		8011348E29B0D7B500DB128B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8011348D29B0D7B500DB128B /* AppDelegate.swift */; };
 		8011349029B0D7B500DB128B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8011348F29B0D7B500DB128B /* SceneDelegate.swift */; };
 		8011349229B0D7B500DB128B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8011349129B0D7B500DB128B /* ViewController.swift */; };
-		8011349729B0D7B600DB128B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8011349629B0D7B600DB128B /* Assets.xcassets */; };
 		8011349A29B0D7B600DB128B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8011349829B0D7B600DB128B /* LaunchScreen.storyboard */; };
 		80807D0D29B0DC32008FD6A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */; };
 		80807D1029B0E460008FD6A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D0F29B0E460008FD6A1 /* FirebaseAuth */; };
@@ -23,6 +22,11 @@
 		80807D1C29B0E460008FD6A1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D1B29B0E460008FD6A1 /* FirebaseFirestoreSwift */; };
 		80807D1E29B0E460008FD6A1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D1D29B0E460008FD6A1 /* FirebaseStorage */; };
 		80807D2029B0E460008FD6A1 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D1F29B0E460008FD6A1 /* FirebaseStorageCombine-Community */; };
+		80ECB91F29B1E82300FEA279 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB91E29B1E82300FEA279 /* LoginViewController.swift */; };
+		80ECB92129B1E83600FEA279 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB92029B1E83600FEA279 /* LoginViewModel.swift */; };
+		80ECB92229B21D1D00FEA279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8011349629B0D7B600DB128B /* Assets.xcassets */; };
+		80ECB92529B3C3F700FEA279 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 80ECB92429B3C3F700FEA279 /* GoogleSignIn */; };
+		80ECB92729B3C3F700FEA279 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 80ECB92629B3C3F700FEA279 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,8 @@
 		8011349929B0D7B600DB128B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8011349B29B0D7B600DB128B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80ECB91E29B1E82300FEA279 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		80ECB92029B1E83600FEA279 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8B466C08FA66FF144E4DF89D /* Pods_Sense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E206993C52D04928EE7A02 /* Pods-Sense.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sense.release.xcconfig"; path = "Target Support Files/Pods-Sense/Pods-Sense.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +52,8 @@
 			files = (
 				80807D1629B0E460008FD6A1 /* FirebaseDatabaseSwift in Frameworks */,
 				5E21519BD3AF576DB15E10D5 /* Pods_Sense.framework in Frameworks */,
+				80ECB92529B3C3F700FEA279 /* GoogleSignIn in Frameworks */,
+				80ECB92729B3C3F700FEA279 /* GoogleSignInSwift in Frameworks */,
 				80807D2029B0E460008FD6A1 /* FirebaseStorageCombine-Community in Frameworks */,
 				80807D1E29B0E460008FD6A1 /* FirebaseStorage in Frameworks */,
 				80807D1229B0E460008FD6A1 /* FirebaseAuthCombine-Community in Frameworks */,
@@ -89,6 +97,7 @@
 		8011348C29B0D7B500DB128B /* Sense */ = {
 			isa = PBXGroup;
 			children = (
+				80ECB91C29B1E7FA00FEA279 /* Scenes */,
 				8011348D29B0D7B500DB128B /* AppDelegate.swift */,
 				8011348F29B0D7B500DB128B /* SceneDelegate.swift */,
 				8011349129B0D7B500DB128B /* ViewController.swift */,
@@ -98,6 +107,23 @@
 				80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */,
 			);
 			path = Sense;
+			sourceTree = "<group>";
+		};
+		80ECB91C29B1E7FA00FEA279 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				80ECB91D29B1E80100FEA279 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		80ECB91D29B1E80100FEA279 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				80ECB91E29B1E82300FEA279 /* LoginViewController.swift */,
+				80ECB92029B1E83600FEA279 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		E068217ADE4C20D9B6C1869D /* Pods */ = {
@@ -138,6 +164,8 @@
 				80807D1B29B0E460008FD6A1 /* FirebaseFirestoreSwift */,
 				80807D1D29B0E460008FD6A1 /* FirebaseStorage */,
 				80807D1F29B0E460008FD6A1 /* FirebaseStorageCombine-Community */,
+				80ECB92429B3C3F700FEA279 /* GoogleSignIn */,
+				80ECB92629B3C3F700FEA279 /* GoogleSignInSwift */,
 			);
 			productName = Sense;
 			productReference = 8011348A29B0D7B500DB128B /* Sense.app */;
@@ -169,6 +197,7 @@
 			mainGroup = 8011348129B0D7B500DB128B;
 			packageReferences = (
 				80807D0E29B0E45F008FD6A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				80ECB92329B3C3F700FEA279 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 8011348B29B0D7B500DB128B /* Products */;
 			projectDirPath = "";
@@ -185,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8011349A29B0D7B600DB128B /* LaunchScreen.storyboard in Resources */,
-				8011349729B0D7B600DB128B /* Assets.xcassets in Resources */,
+				80ECB92229B21D1D00FEA279 /* Assets.xcassets in Resources */,
 				80807D0D29B0DC32008FD6A1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80ECB91F29B1E82300FEA279 /* LoginViewController.swift in Sources */,
 				8011349229B0D7B500DB128B /* ViewController.swift in Sources */,
 				8011348E29B0D7B500DB128B /* AppDelegate.swift in Sources */,
+				80ECB92129B1E83600FEA279 /* LoginViewModel.swift in Sources */,
 				8011349029B0D7B500DB128B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +512,14 @@
 				kind = branch;
 			};
 		};
+		80ECB92329B3C3F700FEA279 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -528,6 +567,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 80807D0E29B0E45F008FD6A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		80ECB92429B3C3F700FEA279 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80ECB92329B3C3F700FEA279 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		80ECB92629B3C3F700FEA279 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80ECB92329B3C3F700FEA279 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
