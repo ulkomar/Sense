@@ -97,12 +97,12 @@ final class LoginViewController: UIViewController {
             make.leading.equalTo(view).offset(Paddings.leading)
             make.trailing.equalTo(view).offset(Paddings.trailing)
         }
-        
+
         forgotPasswordLabel.snp.makeConstraints { make in
             make.top.equalTo(fieldsStack.snp.bottom).offset(10)
             make.trailing.equalTo(safeArea).offset(Paddings.trailing)
         }
-        
+
         buttonsStack.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordLabel.snp.bottom).offset(Paddings.top-20)
             make.leading.equalTo(safeArea).offset(Paddings.leading)

@@ -9,7 +9,7 @@ import UIKit
 
 final class LogoImageView: UIImageView {
 
-    override init(image: UIImage? = UIImage(named: "LogoSense")) {
+    override init(image: UIImage? = UIImage(named: "SenseLogo")) {
         super.init(image: image)
     }
 
