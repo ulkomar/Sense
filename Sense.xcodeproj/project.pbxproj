@@ -51,6 +51,8 @@
 		80ECB95C29B5236000FEA279 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95B29B5236000FEA279 /* LogoImageView.swift */; };
 		80ECB95E29B5253100FEA279 /* TitleAndDescriptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */; };
 		80ECB96029B52D7100FEA279 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95F29B52D7100FEA279 /* InputTextField.swift */; };
+		80ECB96229B5335500FEA279 /* Paddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB96129B5335500FEA279 /* Paddings.swift */; };
+		80ECB96429B5354A00FEA279 /* SimpleColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB96329B5354A00FEA279 /* SimpleColoredButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		80ECB95B29B5236000FEA279 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
 		80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndDescriptionStackView.swift; sourceTree = "<group>"; };
 		80ECB95F29B52D7100FEA279 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		80ECB96129B5335500FEA279 /* Paddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paddings.swift; sourceTree = "<group>"; };
+		80ECB96329B5354A00FEA279 /* SimpleColoredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleColoredButton.swift; sourceTree = "<group>"; };
 		8B466C08FA66FF144E4DF89D /* Pods_Sense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E206993C52D04928EE7A02 /* Pods-Sense.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sense.release.xcconfig"; path = "Target Support Files/Pods-Sense/Pods-Sense.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +192,7 @@
 			children = (
 				80ECB92A29B50ABB00FEA279 /* Colors.swift */,
 				80ECB95729B5100400FEA279 /* Fonts.swift */,
+				80ECB96129B5335500FEA279 /* Paddings.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				80ECB95B29B5236000FEA279 /* LogoImageView.swift */,
 				80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */,
 				80ECB95F29B52D7100FEA279 /* InputTextField.swift */,
+				80ECB96329B5354A00FEA279 /* SimpleColoredButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,7 +447,9 @@
 				8011348E29B0D7B500DB128B /* AppDelegate.swift in Sources */,
 				80ECB95C29B5236000FEA279 /* LogoImageView.swift in Sources */,
 				80ECB92129B1E83600FEA279 /* LoginViewModel.swift in Sources */,
+				80ECB96229B5335500FEA279 /* Paddings.swift in Sources */,
 				8011349029B0D7B500DB128B /* SceneDelegate.swift in Sources */,
+				80ECB96429B5354A00FEA279 /* SimpleColoredButton.swift in Sources */,
 				80ECB95E29B5253100FEA279 /* TitleAndDescriptionStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,5 +11,6 @@ struct Colors {
     static let background = UIColor(hex: "#181A20")
     static let descriptionGray = UIColor(hex: "#707B81")
     static let white = UIColor.white
-    static let yellow = UIColor(hex: "#FDB523")
+    static let yellowBackground = UIColor(hex: "#FDB523")
+    static let yellowText = UIColor(hex: "#F79515")
 }

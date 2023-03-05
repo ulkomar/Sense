@@ -41,33 +41,27 @@ final class LoginViewController: UIViewController {
     }()
 
     private lazy var nameField = InputTextField(placeholderText: "Enter email or phone")
-
     private lazy var passwordField = InputTextField(placeholderText: "Password")
+    private lazy var forgotPasswordLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Forgot password?"
+        label.textColor = Colors.yellowText
+        label.font = Fonts.getFontStyle(style: .regular, size: 12)
+        return label
+    }()
 
     private lazy var buttonsStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [loginButton, registrationButton, googleSignInButton])
+        let stack = UIStackView(arrangedSubviews: [loginButton, googleSignInButton])
         stack.axis = .vertical
         stack.spacing = 20
         stack.distribution = .fillEqually
         return stack
     }()
 
-    private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Login", for: .normal)
-        button.tintColor = .black
-        button.backgroundColor = .systemBlue
-        button.addTarget(self, action: #selector(login), for: .touchUpInside)
-        return button
-    }()
-
-    private lazy var registrationButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Register", for: .normal)
-        button.tintColor = .black
-        button.backgroundColor = .systemBlue
-        return button
-    }()
+    private lazy var loginButton = SimpleColoredButton(
+        text: "Log in",
+        bgColor: Colors.yellowBackground,
+        textColor: Colors.white)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,26 +74,39 @@ final class LoginViewController: UIViewController {
         view.addSubview(logo)
         view.addSubview(screenDescription)
         view.addSubview(fieldsStack)
+        view.addSubview(forgotPasswordLabel)
+        view.addSubview(buttonsStack)
     }
 
     private func setupConstraints() {
         let safeArea = view.safeAreaLayoutGuide
 
         logo.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).offset(50)
+            make.top.equalTo(safeArea).offset(Paddings.top)
             make.centerX.equalTo(safeArea)
         }
 
         screenDescription.snp.makeConstraints { make in
-            make.top.equalTo(logo.snp.bottom).offset(100)
-            make.leading.equalTo(safeArea).offset(50)
-            make.trailing.equalTo(safeArea).offset(-50)
+            make.top.equalTo(logo.snp.bottom).offset(Paddings.top+50)
+            make.leading.equalTo(safeArea).offset(Paddings.leading+30)
+            make.trailing.equalTo(safeArea).offset(Paddings.trailing-30)
         }
 
         fieldsStack.snp.makeConstraints { make in
-            make.top.equalTo(screenDescription.snp.bottom).offset(50)
-            make.leading.equalTo(view).offset(20)
-            make.trailing.equalTo(view).offset(-20)
+            make.top.equalTo(screenDescription.snp.bottom).offset(Paddings.top)
+            make.leading.equalTo(view).offset(Paddings.leading)
+            make.trailing.equalTo(view).offset(Paddings.trailing)
+        }
+        
+        forgotPasswordLabel.snp.makeConstraints { make in
+            make.top.equalTo(fieldsStack.snp.bottom).offset(10)
+            make.trailing.equalTo(safeArea).offset(Paddings.trailing)
+        }
+        
+        buttonsStack.snp.makeConstraints { make in
+            make.top.equalTo(forgotPasswordLabel.snp.bottom).offset(Paddings.top-20)
+            make.leading.equalTo(safeArea).offset(Paddings.leading)
+            make.trailing.equalTo(safeArea).offset(Paddings.trailing)
         }
     }
 
