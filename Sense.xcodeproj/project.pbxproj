@@ -48,6 +48,8 @@
 		80ECB95529B50EAE00FEA279 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ECB93E29B50E7000FEA279 /* Poppins-Thin.ttf */; };
 		80ECB95629B50EB100FEA279 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ECB93A29B50E7000FEA279 /* Poppins-ThinItalic.ttf */; };
 		80ECB95829B5100400FEA279 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95729B5100400FEA279 /* Fonts.swift */; };
+		80ECB95C29B5236000FEA279 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95B29B5236000FEA279 /* LogoImageView.swift */; };
+		80ECB95E29B5253100FEA279 /* TitleAndDescriptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		80ECB94329B50E7100FEA279 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		80ECB94429B50E7100FEA279 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		80ECB95729B5100400FEA279 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		80ECB95B29B5236000FEA279 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
+		80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndDescriptionStackView.swift; sourceTree = "<group>"; };
 		8B466C08FA66FF144E4DF89D /* Pods_Sense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E206993C52D04928EE7A02 /* Pods-Sense.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sense.release.xcconfig"; path = "Target Support Files/Pods-Sense/Pods-Sense.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +143,7 @@
 		8011348C29B0D7B500DB128B /* Sense */ = {
 			isa = PBXGroup;
 			children = (
+				80ECB95A29B5234700FEA279 /* Views */,
 				80ECB95929B517BF00FEA279 /* Core */,
 				80ECB92F29B50C5E00FEA279 /* Resources */,
 				80ECB92829B50AA400FEA279 /* Utils */,
@@ -235,6 +240,15 @@
 				8011348F29B0D7B500DB128B /* SceneDelegate.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		80ECB95A29B5234700FEA279 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80ECB95B29B5236000FEA279 /* LogoImageView.swift */,
+				80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E068217ADE4C20D9B6C1869D /* Pods */ = {
@@ -421,8 +435,10 @@
 				80ECB91F29B1E82300FEA279 /* LoginViewController.swift in Sources */,
 				80ECB92B29B50ABB00FEA279 /* Colors.swift in Sources */,
 				8011348E29B0D7B500DB128B /* AppDelegate.swift in Sources */,
+				80ECB95C29B5236000FEA279 /* LogoImageView.swift in Sources */,
 				80ECB92129B1E83600FEA279 /* LoginViewModel.swift in Sources */,
 				8011349029B0D7B500DB128B /* SceneDelegate.swift in Sources */,
+				80ECB95E29B5253100FEA279 /* TitleAndDescriptionStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

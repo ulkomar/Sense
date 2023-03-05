@@ -19,6 +19,18 @@ class LoginViewController: UIViewController {
         return button
     }()
 
+    private lazy var logo = LogoImageView()
+
+    private lazy var screenDescription: TitleAndDescriptionStackView = {
+        let stack = TitleAndDescriptionStackView(
+            title: "Welcome back",
+            desc: "Login to your account")
+        stack.changeColor(
+            for: .description,
+            color: Colors.white)
+        return stack
+    }()
+
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.text = "Hello"
@@ -29,7 +41,8 @@ class LoginViewController: UIViewController {
 
     private lazy var fieldsStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
-                                    [textLabel,
+                                    [
+                                        textLabel,
                                         nameField,
                                      loginField,
                                      passwordField,
@@ -96,10 +109,25 @@ class LoginViewController: UIViewController {
     }
 
     private func setupSubviews() {
+        view.addSubview(logo)
+        view.addSubview(screenDescription)
         view.addSubview(fieldsStack)
     }
 
     private func setupConstraints() {
+        let safeArea = view.safeAreaLayoutGuide
+
+        logo.snp.makeConstraints { make in
+            make.top.equalTo(safeArea).offset(50)
+            make.centerX.equalTo(safeArea)
+        }
+
+        screenDescription.snp.makeConstraints { make in
+            make.top.equalTo(logo.snp.bottom).offset(100)
+            make.leading.equalTo(safeArea).offset(50)
+            make.trailing.equalTo(safeArea).offset(-50)
+        }
+
         fieldsStack.snp.makeConstraints { make in
             make.top.equalTo(view).offset(300)
             make.leading.equalTo(view).offset(20)

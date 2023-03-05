@@ -32,6 +32,7 @@ struct Fonts {
     private static let fontName = "Poppins"
 
     static let title1 = getFontStyle(style: .bold, size: 30)
+    static let description = getFontStyle(style: .medium, size: 16)
 
     static func getFontStyle(style: FontStyle, size: CGFloat) -> UIFont {
         guard let font = UIFont(
