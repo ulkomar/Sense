@@ -50,6 +50,7 @@
 		80ECB95829B5100400FEA279 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95729B5100400FEA279 /* Fonts.swift */; };
 		80ECB95C29B5236000FEA279 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95B29B5236000FEA279 /* LogoImageView.swift */; };
 		80ECB95E29B5253100FEA279 /* TitleAndDescriptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */; };
+		80ECB96029B52D7100FEA279 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECB95F29B52D7100FEA279 /* InputTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		80ECB95729B5100400FEA279 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		80ECB95B29B5236000FEA279 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
 		80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndDescriptionStackView.swift; sourceTree = "<group>"; };
+		80ECB95F29B52D7100FEA279 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		8B466C08FA66FF144E4DF89D /* Pods_Sense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E206993C52D04928EE7A02 /* Pods-Sense.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sense.release.xcconfig"; path = "Target Support Files/Pods-Sense/Pods-Sense.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,6 +249,7 @@
 			children = (
 				80ECB95B29B5236000FEA279 /* LogoImageView.swift */,
 				80ECB95D29B5253100FEA279 /* TitleAndDescriptionStackView.swift */,
+				80ECB95F29B52D7100FEA279 /* InputTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80ECB96029B52D7100FEA279 /* InputTextField.swift in Sources */,
 				80ECB95829B5100400FEA279 /* Fonts.swift in Sources */,
 				80ECB92E29B50B9300FEA279 /* UIColor+Hex.swift in Sources */,
 				80ECB91F29B1E82300FEA279 /* LoginViewController.swift in Sources */,

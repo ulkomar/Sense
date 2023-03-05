@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TitleAndDescriptionStackView: UIStackView {
+final class TitleAndDescriptionStackView: UIStackView {
 
     enum Label {
         case title

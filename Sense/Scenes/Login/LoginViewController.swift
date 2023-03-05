@@ -11,7 +11,7 @@ import Firebase
 
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     @objc private lazy var googleSignInButton: GIDSignInButton = {
         let button = GIDSignInButton()
@@ -31,50 +31,18 @@ class LoginViewController: UIViewController {
         return stack
     }()
 
-    private lazy var textLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Hello"
-        label.textColor = Colors.background
-        label.font = Fonts.title1
-        return label
-    }()
-
     private lazy var fieldsStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
-                                    [
-                                        textLabel,
-                                        nameField,
-                                     loginField,
-                                     passwordField,
-                                     buttonsStack])
+                                    [nameField,
+                                    passwordField])
         stack.axis = .vertical
-        stack.spacing = 20
+        stack.spacing = 10
         return stack
     }()
 
-    private lazy var nameField: UITextField = {
-        let field = UITextField()
-        field.layer.borderColor = UIColor.black.cgColor
-        field.layer.borderWidth = 1
-        field.placeholder = "Name"
-        return field
-    }()
+    private lazy var nameField = InputTextField(placeholderText: "Enter email or phone")
 
-    private lazy var loginField: UITextField = {
-        let field = UITextField()
-        field.layer.borderColor = UIColor.black.cgColor
-        field.layer.borderWidth = 1
-        field.placeholder = "Login"
-        return field
-    }()
-
-    private lazy var passwordField: UITextField = {
-        let field = UITextField()
-        field.layer.borderColor = UIColor.black.cgColor
-        field.layer.borderWidth = 1
-        field.placeholder = "Password"
-        return field
-    }()
+    private lazy var passwordField = InputTextField(placeholderText: "Password")
 
     private lazy var buttonsStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [loginButton, registrationButton, googleSignInButton])
@@ -129,7 +97,7 @@ class LoginViewController: UIViewController {
         }
 
         fieldsStack.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(300)
+            make.top.equalTo(screenDescription.snp.bottom).offset(50)
             make.leading.equalTo(view).offset(20)
             make.trailing.equalTo(view).offset(-20)
         }
@@ -161,7 +129,7 @@ class LoginViewController: UIViewController {
 
             Auth.auth().signIn(with: credential) { [weak self] result, error in
                 if error != nil { return }
-                self?.textLabel.text = result?.user.displayName
+//                self?.textLabel.text = result?.user.displayName
             }
         }
     }
