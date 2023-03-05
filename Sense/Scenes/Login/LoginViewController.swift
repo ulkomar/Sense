@@ -22,7 +22,8 @@ class LoginViewController: UIViewController {
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.text = "Hello"
-        label.textColor = .black
+        label.textColor = Colors.white
+        label.font = Fonts.title1
         return label
     }()
 
