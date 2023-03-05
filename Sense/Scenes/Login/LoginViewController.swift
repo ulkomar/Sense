@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.text = "Hello"
-        label.textColor = Colors.white
+        label.textColor = Colors.background
         label.font = Fonts.title1
         return label
     }()
@@ -90,7 +90,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         view.backgroundColor = Colors.background
         setupSubviews()
         setupConstraints()
