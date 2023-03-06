@@ -13,12 +13,6 @@ import GoogleSignIn
 
 final class LoginViewController: UIViewController {
 
-    @objc private lazy var googleSignInButton: GIDSignInButton = {
-        let button = GIDSignInButton()
-        button.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
-        return button
-    }()
-
     private lazy var logo = LogoImageView()
 
     private lazy var screenDescription: TitleAndDescriptionStackView = {
@@ -50,18 +44,31 @@ final class LoginViewController: UIViewController {
         return label
     }()
 
-    private lazy var buttonsStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [loginButton, googleSignInButton])
-        stack.axis = .vertical
-        stack.spacing = 20
-        stack.distribution = .fillEqually
-        return stack
-    }()
-
     private lazy var loginButton = SimpleColoredButton(
         text: "Log in",
         bgColor: Colors.yellowBackground,
         textColor: Colors.white)
+
+    private lazy var orSeparator = OrSeparatorStackView()
+
+    private lazy var socialMediaStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .fillProportionally
+        stack.spacing = 35
+        let iconNames = ["GoogleLogo", "FacebookLogo", "AppleLogo"]
+
+        for (index, icon) in iconNames.enumerated() {
+            let button = UIButton()
+            button.tag = index
+            button.addTarget(self, action: #selector(registerUsingSocialMedia), for: .touchUpInside)
+            let image = UIImage(named: icon)
+            button.setImage(image, for: .normal)
+            stack.addArrangedSubview(button)
+        }
+
+        return stack
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +82,9 @@ final class LoginViewController: UIViewController {
         view.addSubview(screenDescription)
         view.addSubview(fieldsStack)
         view.addSubview(forgotPasswordLabel)
-        view.addSubview(buttonsStack)
+        view.addSubview(loginButton)
+        view.addSubview(orSeparator)
+        view.addSubview(socialMediaStackView)
     }
 
     private func setupConstraints() {
@@ -103,10 +112,21 @@ final class LoginViewController: UIViewController {
             make.trailing.equalTo(safeArea).offset(Paddings.trailing)
         }
 
-        buttonsStack.snp.makeConstraints { make in
+        loginButton.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordLabel.snp.bottom).offset(Paddings.top-20)
             make.leading.equalTo(safeArea).offset(Paddings.leading)
             make.trailing.equalTo(safeArea).offset(Paddings.trailing)
+        }
+
+        orSeparator.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(Paddings.top)
+            make.leading.equalTo(safeArea).offset(Paddings.leading+20)
+            make.trailing.equalTo(safeArea).offset(Paddings.trailing-20)
+        }
+
+        socialMediaStackView.snp.makeConstraints { make in
+            make.top.equalTo(orSeparator.snp.bottom).offset(Paddings.top - 25)
+            make.centerX.equalTo(safeArea)
         }
     }
 
@@ -134,10 +154,14 @@ final class LoginViewController: UIViewController {
                 withIDToken: IDToken.tokenString,
                 accessToken: accessToken.tokenString)
 
-            Auth.auth().signIn(with: credential) { [weak self] result, error in
+            Auth.auth().signIn(with: credential) { [weak self] _, error in
                 if error != nil { return }
 //                self?.textLabel.text = result?.user.displayName
             }
         }
+    }
+    
+    @objc private func registerUsingSocialMedia(_ action: UIButton) {
+        print(action.tag)
     }
 }
