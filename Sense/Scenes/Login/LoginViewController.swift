@@ -70,6 +70,38 @@ final class LoginViewController: UIViewController {
         return stack
     }()
 
+    private lazy var createAccountStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [createAccountLabel, createAccountButton])
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.spacing = 5
+        return stack
+    }()
+
+    private lazy var createAccountLabel: UILabel = {
+        let label = UILabel()
+        label.font = Fonts.getFontStyle(style: .regular, size: 12)
+        label.textColor = Colors.white
+        label.text = "Don't have an account?"
+        return label
+    }()
+
+    private lazy var createAccountButton: UIButton = {
+        let button = UIButton()
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: Colors.yellowText.withAlphaComponent(0.8),
+            NSAttributedString.Key.font: Fonts.getFontStyle(style: .regular, size: 12)
+        ]
+        button.setAttributedTitle(
+            NSMutableAttributedString(
+                string: "Create account",
+                attributes: attributes),
+            for: .normal)
+
+        button.setTitleColor(Colors.yellowText, for: .normal)
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.background
@@ -85,6 +117,8 @@ final class LoginViewController: UIViewController {
         view.addSubview(loginButton)
         view.addSubview(orSeparator)
         view.addSubview(socialMediaStackView)
+
+        view.addSubview(createAccountStackView)
     }
 
     private func setupConstraints() {
@@ -128,6 +162,14 @@ final class LoginViewController: UIViewController {
             make.top.equalTo(orSeparator.snp.bottom).offset(Paddings.top - 25)
             make.centerX.equalTo(safeArea)
         }
+
+        // MARK: bottom text of account creating
+
+
+        createAccountStackView.snp.makeConstraints { make in
+            make.top.equalTo(socialMediaStackView.snp.bottom).offset(Paddings.top - 25)
+            make.centerX.equalTo(safeArea)
+        }
     }
 
     @objc private func login(_ action: UIButton) {
@@ -160,7 +202,7 @@ final class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     @objc private func registerUsingSocialMedia(_ action: UIButton) {
         print(action.tag)
     }
