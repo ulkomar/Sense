@@ -46,7 +46,10 @@ final class InputTextField: UITextField {
         layer.cornerRadius = 10
         textColor = Colors.white
         font = Fonts.getFontStyle(style: .regular, size: 12)
+
+        translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 50).isActive = true
+
         delegate = self
     }
 }

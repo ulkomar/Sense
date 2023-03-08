@@ -26,9 +26,8 @@ final class LoginViewController: UIViewController {
     }()
 
     private lazy var fieldsStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews:
-                                    [nameField,
-                                    passwordField])
+        let stack = UIStackView(arrangedSubviews: [nameField,
+                                                   passwordField])
         stack.axis = .vertical
         stack.spacing = 10
         return stack
@@ -153,6 +152,7 @@ final class LoginViewController: UIViewController {
 
         loginButton.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordLabel.snp.bottom).offset(Paddings.top-20)
+            make.height.equalTo(50)
             make.leading.equalTo(safeArea).offset(Paddings.leading)
             make.trailing.equalTo(safeArea).offset(Paddings.trailing)
         }
@@ -167,8 +167,6 @@ final class LoginViewController: UIViewController {
             make.top.equalTo(orSeparator.snp.bottom).offset(Paddings.top - 25)
             make.centerX.equalTo(safeArea)
         }
-
-        // MARK: bottom text of account creating
 
         createAccountStackView.snp.makeConstraints { make in
             make.top.equalTo(socialMediaStackView.snp.bottom).offset(Paddings.top - 25)
