@@ -153,7 +153,6 @@ final class LoginViewController: UIViewController {
 
         loginButton.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordLabel.snp.bottom).offset(Paddings.top-20)
-            make.height.equalTo(50)
             make.leading.equalTo(safeArea).offset(Paddings.leading)
             make.trailing.equalTo(safeArea).offset(Paddings.trailing)
         }

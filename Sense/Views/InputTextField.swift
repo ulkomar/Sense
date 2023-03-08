@@ -47,5 +47,16 @@ final class InputTextField: UITextField {
         textColor = Colors.white
         font = Fonts.getFontStyle(style: .regular, size: 12)
         heightAnchor.constraint(equalToConstant: 50).isActive = true
+        delegate = self
+    }
+}
+
+extension InputTextField: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        layer.borderColor = Colors.yellowBackground.cgColor
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        layer.borderColor = Colors.descriptionGray.cgColor
     }
 }
