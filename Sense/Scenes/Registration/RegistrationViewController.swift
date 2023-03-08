@@ -105,7 +105,7 @@ final class RegistrationViewController: UIViewController {
                 string: "Log in",
                 attributes: attributes),
             for: .normal)
-
+        button.addTarget(self, action: #selector(showLoginScreen), for: .touchUpInside)
         button.setTitleColor(Colors.yellowText, for: .normal)
         return button
     }()
@@ -124,7 +124,7 @@ final class RegistrationViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
 
         screenDescription.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).offset(Paddings.top+20)
+            make.top.equalTo(safeArea).offset(Paddings.top)
             make.leading.equalTo(safeArea).offset(Paddings.leading+30)
             make.trailing.equalTo(safeArea).offset(Paddings.trailing-30)
         }
@@ -167,5 +167,9 @@ final class RegistrationViewController: UIViewController {
 
     @objc private func loginUsingSocialMedia() {
 
+    }
+    
+    @objc private func showLoginScreen() {
+        navigationController?.popViewController(animated: true)
     }
 }

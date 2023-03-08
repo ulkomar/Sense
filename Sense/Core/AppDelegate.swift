@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                guard let _ = user else { return }
 //
 //            }
+            UINavigationBar.appearance().tintColor = Colors.barButtons
             return true
         }
 

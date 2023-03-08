@@ -14,6 +14,7 @@
 		805BDE9E29B768F100098427 /* UITextField+EnablePasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */; };
 		805BDEA129B8CAC800098427 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA029B8CAC800098427 /* RegistrationViewController.swift */; };
 		805BDEA329B8CAD900098427 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */; };
+		805BDEA529B9051B00098427 /* UInavigationController+WhiteBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA429B9051B00098427 /* UInavigationController+WhiteBackButton.swift */; };
 		80807D0D29B0DC32008FD6A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */; };
 		80807D1029B0E460008FD6A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D0F29B0E460008FD6A1 /* FirebaseAuth */; };
 		80807D1229B0E460008FD6A1 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D1129B0E460008FD6A1 /* FirebaseAuthCombine-Community */; };
@@ -70,6 +71,7 @@
 		805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+EnablePasswordToggle.swift"; sourceTree = "<group>"; };
 		805BDEA029B8CAC800098427 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		805BDEA429B9051B00098427 /* UInavigationController+WhiteBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInavigationController+WhiteBackButton.swift"; sourceTree = "<group>"; };
 		80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80B0C61A29B5F7F200D5E280 /* OrSeparatorStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrSeparatorStackView.swift; sourceTree = "<group>"; };
 		80ECB91E29B1E82300FEA279 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				80ECB92D29B50B9300FEA279 /* UIColor+Hex.swift */,
 				805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */,
+				805BDEA429B9051B00098427 /* UInavigationController+WhiteBackButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				80ECB96029B52D7100FEA279 /* InputTextField.swift in Sources */,
 				80ECB95829B5100400FEA279 /* Fonts.swift in Sources */,
 				80ECB92E29B50B9300FEA279 /* UIColor+Hex.swift in Sources */,
+				805BDEA529B9051B00098427 /* UInavigationController+WhiteBackButton.swift in Sources */,
 				80ECB91F29B1E82300FEA279 /* LoginViewController.swift in Sources */,
 				80ECB92B29B50ABB00FEA279 /* Colors.swift in Sources */,
 				8011348E29B0D7B500DB128B /* AppDelegate.swift in Sources */,

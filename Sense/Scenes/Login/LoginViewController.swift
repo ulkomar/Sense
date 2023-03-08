@@ -101,7 +101,7 @@ final class LoginViewController: UIViewController {
                 string: "Create account",
                 attributes: attributes),
             for: .normal)
-
+        button.addTarget(self, action: #selector(showRegistrationScreen), for: .touchUpInside)
         button.setTitleColor(Colors.yellowText, for: .normal)
         return button
     }()
@@ -134,7 +134,7 @@ final class LoginViewController: UIViewController {
         }
 
         screenDescription.snp.makeConstraints { make in
-            make.top.equalTo(logo.snp.bottom).offset(Paddings.top+50)
+            make.top.equalTo(logo.snp.bottom).offset(Paddings.top+25)
             make.leading.equalTo(safeArea).offset(Paddings.leading+30)
             make.trailing.equalTo(safeArea).offset(Paddings.trailing-30)
         }
@@ -176,6 +176,10 @@ final class LoginViewController: UIViewController {
 
     @objc private func login(_ action: UIButton) {
 
+    }
+
+    @objc private func showRegistrationScreen() {
+        navigationController?.pushViewController(RegistrationViewController(), animated: true)
     }
 
     @objc private func signInWithGoogle(_ action: UIButton) {

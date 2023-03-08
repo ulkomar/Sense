@@ -13,4 +13,5 @@ struct Colors {
     static let white = UIColor.white
     static let yellowBackground = UIColor(hex: "#FDB523")
     static let yellowText = UIColor(hex: "#F79515")
+    static let barButtons = UIColor(hex: "#3D4A5C")
 }
