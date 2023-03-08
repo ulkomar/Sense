@@ -10,6 +10,8 @@ import SnapKit
 
 final class RegistrationViewController: UIViewController {
 
+    weak var coordinator: RegistrationCoordinator?
+
     private lazy var screenDescription: TitleAndDescriptionStackView = {
         let stack = TitleAndDescriptionStackView(
             title: "Register account",
@@ -46,7 +48,7 @@ final class RegistrationViewController: UIViewController {
     }()
 
     private lazy var signupButton = SimpleColoredButton(
-        text: "Sign un",
+        text: "Sign up",
         bgColor: Colors.yellowBackground,
         textColor: Colors.white)
 
@@ -166,9 +168,9 @@ final class RegistrationViewController: UIViewController {
     }
 
     @objc private func loginUsingSocialMedia() {
-
+        coordinator?.showLoginScreenAgain()
     }
-    
+
     @objc private func showLoginScreen() {
         navigationController?.popViewController(animated: true)
     }

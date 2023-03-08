@@ -13,6 +13,8 @@ import GoogleSignIn
 
 final class LoginViewController: UIViewController {
 
+    weak var coordinator: RegistrationCoordinator?
+
     private lazy var logo = LogoImageView()
 
     private lazy var screenDescription: TitleAndDescriptionStackView = {
@@ -179,7 +181,7 @@ final class LoginViewController: UIViewController {
     }
 
     @objc private func showRegistrationScreen() {
-        navigationController?.pushViewController(RegistrationViewController(), animated: true)
+        coordinator?.showRegistrationScreen()
     }
 
     @objc private func signInWithGoogle(_ action: UIButton) {

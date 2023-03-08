@@ -14,6 +14,9 @@
 		805BDE9E29B768F100098427 /* UITextField+EnablePasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */; };
 		805BDEA129B8CAC800098427 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA029B8CAC800098427 /* RegistrationViewController.swift */; };
 		805BDEA329B8CAD900098427 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */; };
+		805BDEA829B91DA000098427 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA729B91DA000098427 /* Coordinator.swift */; };
+		805BDEAA29B91DF600098427 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA929B91DF600098427 /* AppCoordinator.swift */; };
+		805BDEAD29B91F4200098427 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEAC29B91F4200098427 /* RegistrationCoordinator.swift */; };
 		80807D0D29B0DC32008FD6A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */; };
 		80807D1029B0E460008FD6A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D0F29B0E460008FD6A1 /* FirebaseAuth */; };
 		80807D1229B0E460008FD6A1 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D1129B0E460008FD6A1 /* FirebaseAuthCombine-Community */; };
@@ -70,6 +73,9 @@
 		805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+EnablePasswordToggle.swift"; sourceTree = "<group>"; };
 		805BDEA029B8CAC800098427 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		805BDEA729B91DA000098427 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		805BDEA929B91DF600098427 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		805BDEAC29B91F4200098427 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80B0C61A29B5F7F200D5E280 /* OrSeparatorStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrSeparatorStackView.swift; sourceTree = "<group>"; };
 		80ECB91E29B1E82300FEA279 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 		8011348C29B0D7B500DB128B /* Sense */ = {
 			isa = PBXGroup;
 			children = (
+				805BDEA629B91D9300098427 /* Coordinator */,
 				80ECB95A29B5234700FEA279 /* Views */,
 				80ECB95929B517BF00FEA279 /* Core */,
 				80ECB92F29B50C5E00FEA279 /* Resources */,
@@ -175,6 +182,24 @@
 				805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		805BDEA629B91D9300098427 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				805BDEAB29B91F3000098427 /* CoordinatorFlows */,
+				805BDEA729B91DA000098427 /* Coordinator.swift */,
+				805BDEA929B91DF600098427 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		805BDEAB29B91F3000098427 /* CoordinatorFlows */ = {
+			isa = PBXGroup;
+			children = (
+				805BDEAC29B91F4200098427 /* RegistrationCoordinator.swift */,
+			);
+			path = CoordinatorFlows;
 			sourceTree = "<group>";
 		};
 		80ECB91C29B1E7FA00FEA279 /* Scenes */ = {
@@ -465,12 +490,15 @@
 				80ECB91F29B1E82300FEA279 /* LoginViewController.swift in Sources */,
 				80ECB92B29B50ABB00FEA279 /* Colors.swift in Sources */,
 				8011348E29B0D7B500DB128B /* AppDelegate.swift in Sources */,
+				805BDEAA29B91DF600098427 /* AppCoordinator.swift in Sources */,
 				80ECB95C29B5236000FEA279 /* LogoImageView.swift in Sources */,
 				80ECB92129B1E83600FEA279 /* LoginViewModel.swift in Sources */,
 				80ECB96229B5335500FEA279 /* Paddings.swift in Sources */,
 				805BDEA129B8CAC800098427 /* RegistrationViewController.swift in Sources */,
+				805BDEA829B91DA000098427 /* Coordinator.swift in Sources */,
 				805BDE9E29B768F100098427 /* UITextField+EnablePasswordToggle.swift in Sources */,
 				80B0C61B29B5F7F200D5E280 /* OrSeparatorStackView.swift in Sources */,
+				805BDEAD29B91F4200098427 /* RegistrationCoordinator.swift in Sources */,
 				8011349029B0D7B500DB128B /* SceneDelegate.swift in Sources */,
 				805BDEA329B8CAD900098427 /* RegistrationViewModel.swift in Sources */,
 				80ECB96429B5354A00FEA279 /* SimpleColoredButton.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let coordinator = AppCoordinator(navigationController: UINavigationController())
 
     func scene(
         _ scene: UIScene,
@@ -17,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions) {
             guard let windowScene = (scene as? UIWindowScene) else { return }
             window = UIWindow(windowScene: windowScene)
-            window?.rootViewController = UINavigationController(
-                rootViewController: LoginViewController()) 
+            window?.rootViewController = coordinator.navigationController
+            coordinator.start()
             window?.makeKeyAndVisible()
         }
 }
