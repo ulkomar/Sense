@@ -7,14 +7,16 @@
 
 import UIKit
 
-class OrSeparatorStackView: UIStackView {
+final class OrSeparatorStackView: UIStackView {
 
     private lazy var leftView = GradientView(
         gradientStartColor: UIColor(hex: "#F79515"),
         gradientEndColor: UIColor(hex: "#FFC52A"))
+
     private lazy var rightView = GradientView(
         gradientStartColor: UIColor(hex: "#FFC52A"),
         gradientEndColor: UIColor(hex: "#F79515"))
+
     private lazy var wordORView: UILabel = {
         let label = UILabel()
         label.text = "or"
@@ -44,28 +46,25 @@ class OrSeparatorStackView: UIStackView {
 
     private func setupConstraints() {
 
-        leftView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            leftView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            leftView.trailingAnchor.constraint(equalTo: wordORView.leadingAnchor, constant: -15),
-            leftView.heightAnchor.constraint(equalToConstant: 1),
-            leftView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
-        ])
+        leftView.snp.makeConstraints { make in
+            make.leading.equalTo(self)
+            make.trailing.equalTo(wordORView.snp.leading).offset(-15)
+            make.centerY.equalTo(self)
+            make.height.equalTo(1)
+        }
 
-        rightView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            rightView.leadingAnchor.constraint(equalTo: wordORView.trailingAnchor, constant: 15),
-            rightView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            rightView.heightAnchor.constraint(equalToConstant: 1),
-            rightView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
-        ])
+        rightView.snp.makeConstraints { make in
+            make.leading.equalTo(wordORView.snp.trailing).offset(15)
+            make.trailing.equalTo(self)
+            make.centerY.equalTo(self)
+            make.height.equalTo(1)
+        }
 
-        wordORView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            wordORView.leadingAnchor.constraint(equalTo: leftView.trailingAnchor, constant: 15),
-            wordORView.trailingAnchor.constraint(equalTo: rightView.leadingAnchor, constant: -15),
-            wordORView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
-        ])
+        wordORView.snp.makeConstraints { make in
+            make.leading.equalTo(leftView.snp.trailing).offset(15)
+            make.trailing.equalTo(rightView.snp.leading).offset(-15)
+            make.centerY.equalTo(self)
+        }
     }
 
 }

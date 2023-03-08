@@ -14,8 +14,8 @@ final class TitleAndDescriptionStackView: UIStackView {
         case description
     }
 
-    let title: String
-    let desc: String
+    private let title: String
+    private let desc: String
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()

@@ -10,7 +10,11 @@ import SnapKit
 
 final class RegistrationViewController: UIViewController {
 
+    // MARK: Variables
+
     weak var coordinator: RegistrationCoordinator?
+
+    // MARK: UIViews
 
     private lazy var screenDescription: TitleAndDescriptionStackView = {
         let stack = TitleAndDescriptionStackView(
@@ -51,13 +55,6 @@ final class RegistrationViewController: UIViewController {
         text: "Sign up",
         bgColor: Colors.yellowBackground,
         textColor: Colors.white)
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = Colors.background
-        setupSubviews()
-        setupConstraints()
-    }
 
     private lazy var orSeparator = OrSeparatorStackView()
 
@@ -111,6 +108,17 @@ final class RegistrationViewController: UIViewController {
         button.setTitleColor(Colors.yellowText, for: .normal)
         return button
     }()
+
+    // MARK: Life cycle functions
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = Colors.background
+        setupSubviews()
+        setupConstraints()
+    }
+
+    // MARK: Setup functions
 
     private func setupSubviews() {
         view.addSubview(screenDescription)
@@ -166,6 +174,8 @@ final class RegistrationViewController: UIViewController {
             make.centerX.equalTo(safeArea)
         }
     }
+
+    // MARK: Class functions
 
     @objc private func loginUsingSocialMedia() {
         coordinator?.showLoginScreenAgain()

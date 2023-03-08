@@ -13,7 +13,11 @@ import GoogleSignIn
 
 final class LoginViewController: UIViewController {
 
+    // MARK: Variables
+
     weak var coordinator: RegistrationCoordinator?
+
+    // MARK: UIViews
 
     private lazy var logo = LogoImageView()
 
@@ -108,12 +112,16 @@ final class LoginViewController: UIViewController {
         return button
     }()
 
+    // MARK: Lify cycle functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.background
         setupSubviews()
         setupConstraints()
     }
+
+    // MARK: Setup functions
 
     private func setupSubviews() {
         view.addSubview(logo)
@@ -175,6 +183,8 @@ final class LoginViewController: UIViewController {
             make.centerX.equalTo(safeArea)
         }
     }
+
+    // MARK: Class functions
 
     @objc private func login(_ action: UIButton) {
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SimpleColoredButton: UIButton {
+final class SimpleColoredButton: UIButton {
 
     init(text: String, bgColor: UIColor, textColor: UIColor) {
         super.init(frame: .zero)
