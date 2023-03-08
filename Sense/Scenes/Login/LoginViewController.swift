@@ -35,7 +35,12 @@ final class LoginViewController: UIViewController {
     }()
 
     private lazy var nameField = InputTextField(placeholderText: "Enter email or phone")
-    private lazy var passwordField = InputTextField(placeholderText: "Password")
+    private lazy var passwordField: InputTextField = {
+        let field = InputTextField(placeholderText: "Password")
+        field.enablePasswordToggle()
+        return field
+    }()
+
     private lazy var forgotPasswordLabel: UILabel = {
         let label = UILabel()
         label.text = "Forgot password?"
@@ -125,7 +130,7 @@ final class LoginViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
 
         logo.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).offset(Paddings.top)
+            make.top.equalTo(safeArea).offset(Paddings.top+15)
             make.centerX.equalTo(safeArea)
         }
 
@@ -136,7 +141,7 @@ final class LoginViewController: UIViewController {
         }
 
         fieldsStack.snp.makeConstraints { make in
-            make.top.equalTo(screenDescription.snp.bottom).offset(Paddings.top)
+            make.top.equalTo(screenDescription.snp.bottom).offset(Paddings.top+10)
             make.leading.equalTo(view).offset(Paddings.leading)
             make.trailing.equalTo(view).offset(Paddings.trailing)
         }
@@ -148,6 +153,7 @@ final class LoginViewController: UIViewController {
 
         loginButton.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordLabel.snp.bottom).offset(Paddings.top-20)
+            make.height.equalTo(50)
             make.leading.equalTo(safeArea).offset(Paddings.leading)
             make.trailing.equalTo(safeArea).offset(Paddings.trailing)
         }
@@ -164,7 +170,6 @@ final class LoginViewController: UIViewController {
         }
 
         // MARK: bottom text of account creating
-
 
         createAccountStackView.snp.makeConstraints { make in
             make.top.equalTo(socialMediaStackView.snp.bottom).offset(Paddings.top - 25)
@@ -196,7 +201,7 @@ final class LoginViewController: UIViewController {
                 withIDToken: IDToken.tokenString,
                 accessToken: accessToken.tokenString)
 
-            Auth.auth().signIn(with: credential) { [weak self] _, error in
+            Auth.auth().signIn(with: credential) { _, error in
                 if error != nil { return }
 //                self?.textLabel.text = result?.user.displayName
             }

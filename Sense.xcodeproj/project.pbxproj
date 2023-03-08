@@ -11,6 +11,9 @@
 		8011348E29B0D7B500DB128B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8011348D29B0D7B500DB128B /* AppDelegate.swift */; };
 		8011349029B0D7B500DB128B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8011348F29B0D7B500DB128B /* SceneDelegate.swift */; };
 		8011349A29B0D7B600DB128B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8011349829B0D7B600DB128B /* LaunchScreen.storyboard */; };
+		805BDE9E29B768F100098427 /* UITextField+EnablePasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */; };
+		805BDEA129B8CAC800098427 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA029B8CAC800098427 /* RegistrationViewController.swift */; };
+		805BDEA329B8CAD900098427 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */; };
 		80807D0D29B0DC32008FD6A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */; };
 		80807D1029B0E460008FD6A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D0F29B0E460008FD6A1 /* FirebaseAuth */; };
 		80807D1229B0E460008FD6A1 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 80807D1129B0E460008FD6A1 /* FirebaseAuthCombine-Community */; };
@@ -64,6 +67,9 @@
 		8011349629B0D7B600DB128B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8011349929B0D7B600DB128B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8011349B29B0D7B600DB128B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+EnablePasswordToggle.swift"; sourceTree = "<group>"; };
+		805BDEA029B8CAC800098427 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		80807D0C29B0DC32008FD6A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80B0C61A29B5F7F200D5E280 /* OrSeparatorStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrSeparatorStackView.swift; sourceTree = "<group>"; };
 		80ECB91E29B1E82300FEA279 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -162,11 +168,21 @@
 			path = Sense;
 			sourceTree = "<group>";
 		};
+		805BDE9F29B8CA9E00098427 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				805BDEA029B8CAC800098427 /* RegistrationViewController.swift */,
+				805BDEA229B8CAD900098427 /* RegistrationViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		80ECB91C29B1E7FA00FEA279 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				8011349829B0D7B600DB128B /* LaunchScreen.storyboard */,
 				80ECB91D29B1E80100FEA279 /* Login */,
+				805BDE9F29B8CA9E00098427 /* Registration */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -203,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				80ECB92D29B50B9300FEA279 /* UIColor+Hex.swift */,
+				805BDE9D29B768F100098427 /* UITextField+EnablePasswordToggle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,8 +468,11 @@
 				80ECB95C29B5236000FEA279 /* LogoImageView.swift in Sources */,
 				80ECB92129B1E83600FEA279 /* LoginViewModel.swift in Sources */,
 				80ECB96229B5335500FEA279 /* Paddings.swift in Sources */,
+				805BDEA129B8CAC800098427 /* RegistrationViewController.swift in Sources */,
+				805BDE9E29B768F100098427 /* UITextField+EnablePasswordToggle.swift in Sources */,
 				80B0C61B29B5F7F200D5E280 /* OrSeparatorStackView.swift in Sources */,
 				8011349029B0D7B500DB128B /* SceneDelegate.swift in Sources */,
+				805BDEA329B8CAD900098427 /* RegistrationViewModel.swift in Sources */,
 				80ECB96429B5354A00FEA279 /* SimpleColoredButton.swift in Sources */,
 				80ECB95E29B5253100FEA279 /* TitleAndDescriptionStackView.swift in Sources */,
 			);
@@ -599,8 +619,7 @@
 				INFOPLIST_FILE = Sense/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,9 +628,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sense.Project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -628,8 +650,7 @@
 				INFOPLIST_FILE = Sense/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,9 +659,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sense.Project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoSense" translatesAutoresizingMaskIntoConstraints="NO" id="rd0-Fx-lDb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenseLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rd0-Fx-lDb">
                                 <rect key="frame" x="98" y="388" width="197" height="76"/>
                             </imageView>
                         </subviews>
@@ -34,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoSense" width="197" height="76"/>
+        <image name="SenseLogo" width="197" height="76"/>
     </resources>
 </document>
