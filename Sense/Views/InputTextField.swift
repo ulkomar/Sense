@@ -9,7 +9,7 @@ import UIKit
 
 final class InputTextField: UITextField {
 
-    private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 20)
+    private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 40)
 
     private let attributes = [
         NSAttributedString.Key.foregroundColor: Colors.descriptionGray,

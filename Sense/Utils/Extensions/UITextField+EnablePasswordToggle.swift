@@ -29,8 +29,7 @@ extension UITextField {
 
         let rightFrame = UIView()
         rightFrame.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-
-        button.frame = CGRect(x: 0, y: 0, width: rightFrame.frame.width, height: rightFrame.frame.width)
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         button.contentHorizontalAlignment = .leading
         rightFrame.addSubview(button)
 
