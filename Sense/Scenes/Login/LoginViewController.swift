@@ -187,14 +187,29 @@ final class LoginViewController: UIViewController {
     // MARK: Class functions
 
     @objc private func login(_ action: UIButton) {
-
+    
     }
 
     @objc private func showRegistrationScreen() {
         coordinator?.showRegistrationScreen()
     }
 
-    @objc private func signInWithGoogle(_ action: UIButton) {
+    
+
+    @objc private func registerUsingSocialMedia(_ action: UIButton) {
+        switch action.tag {
+        case 0:
+            signInWithGoogle()
+        case 1:
+            break
+        case 2:
+            break
+        default:
+            break
+        }
+    }
+    
+    private func signInWithGoogle() {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
         // Create Google Sign In configuration object.
@@ -220,8 +235,8 @@ final class LoginViewController: UIViewController {
             }
         }
     }
-
-    @objc private func registerUsingSocialMedia(_ action: UIButton) {
-        print(action.tag)
+    
+    private func signInWithFacebook() {
+        
     }
 }
