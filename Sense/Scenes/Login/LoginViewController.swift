@@ -9,11 +9,13 @@ import UIKit
 import SnapKit
 import Firebase
 import FacebookLogin
-
 import GoogleSignIn
+import AuthenticationServices
 
-final class LoginViewController: UIViewController {
-
+final class LoginViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
     // MARK: Variables
 
     weak var coordinator: RegistrationCoordinator?
@@ -195,7 +197,6 @@ final class LoginViewController: UIViewController {
         coordinator?.showRegistrationScreen()
     }
 
-
     @objc private func registerUsingSocialMedia(_ action: UIButton) {
         switch action.tag {
         case 0:
@@ -203,7 +204,7 @@ final class LoginViewController: UIViewController {
         case 1:
             signInWithFacebook()
         case 2:
-            break
+            signInWithApple()
         default:
             break
         }
@@ -247,5 +248,30 @@ final class LoginViewController: UIViewController {
                 print("Logged In")
             }
         }
+    }
+
+    private func signInWithApple() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.email, .fullName]
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
+            return
+        }
+        print(appleIDCredential.fullName)
+        print(appleIDCredential.email)
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error)
     }
 }
