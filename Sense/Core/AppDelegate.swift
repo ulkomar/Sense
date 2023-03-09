@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FacebookLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                guard let _ = user else { return }
 //
 //            }
+            ApplicationDelegate.shared.application(
+                    application,
+                    didFinishLaunchingWithOptions: launchOptions
+                )
             UINavigationBar.appearance().tintColor = Colors.barButtons
             return true
         }
@@ -27,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ app: UIApplication,
         open url: URL,
         options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+//            ApplicationDelegate.shared.application(
+//                app,
+//                open: url,
+//                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//                annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+//            )
             return GIDSignIn.sharedInstance.handle(url)
         }
 }

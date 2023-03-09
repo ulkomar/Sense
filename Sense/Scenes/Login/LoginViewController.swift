@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Firebase
+import FacebookLogin
 
 import GoogleSignIn
 
@@ -187,28 +188,27 @@ final class LoginViewController: UIViewController {
     // MARK: Class functions
 
     @objc private func login(_ action: UIButton) {
-    
+
     }
 
     @objc private func showRegistrationScreen() {
         coordinator?.showRegistrationScreen()
     }
 
-    
 
     @objc private func registerUsingSocialMedia(_ action: UIButton) {
         switch action.tag {
         case 0:
             signInWithGoogle()
         case 1:
-            break
+            signInWithFacebook()
         case 2:
             break
         default:
             break
         }
     }
-    
+
     private func signInWithGoogle() {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
@@ -235,8 +235,17 @@ final class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     private func signInWithFacebook() {
-        
+        let loginManager = LoginManager()
+        loginManager.logIn(permissions: ["public_profile"], from: self) { result, error in
+            if let error = error {
+                print("Encountered Erorr: \(error)")
+            } else if let result = result, result.isCancelled {
+                print("Cancelled")
+            } else {
+                print("Logged In")
+            }
+        }
     }
 }
